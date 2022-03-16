@@ -38,7 +38,7 @@ function App() {
   }, 1500);
   return (
     <div data-theme={theme} className="app-container">
-      <Navbar changeTheme={changeTheme} currentTheme={theme} />
+      {/* <Navbar changeTheme={changeTheme} currentTheme={theme} /> */}
       <Home />
       <Footer />
     </div>
