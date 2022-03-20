@@ -1,6 +1,5 @@
 # Barber Shop
 ![desktop view](https://github.com/wright-donovan/barber-shop/blob/main/public/images/desktop.png?raw=true)
-![mobile view](https://github.com/wright-donovan/barber-shop/blob/main/public/images/mobile.png?raw=true)
 
 ## Overview
 - What is the project?
