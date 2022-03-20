@@ -9,10 +9,15 @@ export default function Hero(){
                         rgba(145, 146, 122, 0.42)), 
                         url(${HeroBg})`, 
                     backgroundSize: "cover", 
-                    backgroundRepeat: "no-repeat" 
+                    backgroundRepeat: "no-repeat",
+                    backgroundPosition: "center"
                 }} 
                 className="hero-bg">
             </div>
+            <h3>Welcome to Clips & Fade City</h3>
+            <button className="book-btn">
+                <a href="/">Book</a>    
+            </button>
         </div>
     )
 }

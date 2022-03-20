@@ -1,21 +1,205 @@
 .home {
   .hero-container{
+    height: 600px;
     position: relative;
-    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
     
     .hero-bg{
       position: absolute;
       object-fit: contain;
-      height: 100vh;
+      height: 600px;
       width: 100%;
       top: 0; 
     }
 
+    // Hero Header
+    h3{
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      width: 280px;
+      position: absolute;
+      top: 55%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: var(--alternate-font);
+      font-size: 30px;
+      font-weight: 700;
+      text-align: center;
+      color: #fff;
+    }
+
+    // Hero Header Mobile
+    @include breakpoint-down(small){
+      h3{
+        width: 240px;
+      }
+    }
+
+    .book-btn{
+      margin-bottom: 100px;
+    }
+
   }
 
+
+  // Main Styles
   .main-container{
-    height: 600px;
+    height: 100%;
+
+    // Button Group
+    .button-group{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 200px;
+      background: white;;
+
+      .buttons{
+        display: block;
+        margin: 4px 0;
+        border: solid 1px rgb(207, 199, 199);
+      }
+    }
+
+    // Flex Group
+
+    // Desktop Sizing
+    @include breakpoint-up(medLarge){
+      .flex-group{
+        display: flex;
+
+        .logo-block{
+          width: 50%;
+        }
+
+        .welcome-section{
+          height: 500px;
+          
+          .welcome-header{
+            font-size: 30px;
+          }
+
+          .welcome-message.second{
+            width: 80%;
+          }
+        }
+      }
+    }
+    
+    // Logo Block
+    .logo-block{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 500px;
+      width: 100%;
+      background: linear-gradient(180deg, var(--dark), var(--background));
+      transition: all .5s ease-in-out;
+    }
+    
+    // Welcome Section
+    .welcome-section{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 300px;
+      background-color: white;
+      padding: 40px 20px;
+      .welcome-header{
+        font-size: 24px;
+        font-family: var(--alternate-font), sans-serif;
+      }
+
+      .welcome-message{
+        font-family: var(--third-font);
+        font-size: 14px;
+        display: flex;
+        justify-content: flex-start;
+        padding: 4px 0;
+      }
+
+      
+      .welcome-message.first{
+        font-weight: 700;
+      }
+
+      .welcome-message.second{
+        font-weight: 400;
+        line-height: 1.45rem;
+      }
+    }
+
+    // Team Section
+    .team-section{
+      height: 100%;
+      width: 500px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: var(--alternate-font);
+
+      @include breakpoint-down(small){
+        width: 360px;
+      }
+
+      .team-section-header{
+        font-size: 30px;
+        color: white;
+        padding: 40px 0;
+        letter-spacing: 1.5px;
+      }
+
+      .team-members{
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 20px;
+        .teammate-photo{
+          height: 140px;
+          width: 140px;
+          border-radius: 50%;
+        }
+
+        @include breakpoint-down(small){
+          .teammate-photo{
+            height: 100px;
+            width: 100px;
+          }
+        }
+
+        .teammate-name{
+          padding-top: 10px;
+          color: white;
+          text-align: center;
+        }
+      }
+    }
+
+    // Map Section
+    .map-section{
+      margin: 60px 0;
+      position: relative;
+      height: 400px;
+      object-fit: cover;
+
+      .map{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+      }
+    }
+
   }
+
+
 
 
 
