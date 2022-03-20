@@ -14,7 +14,7 @@ export default function Hero(){
                 }} 
                 className="hero-bg">
             </div>
-            <h3>Welcome to Clips & Fade City</h3>
+            <h3>Welcome to Barber Shop Houston</h3>
             <button className="book-btn">
                 <a href="/">Book</a>    
             </button>
