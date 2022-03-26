@@ -12,16 +12,16 @@ export default function Navbar({ changeTheme, currentTheme }) {
               <a href="#features">Home</a>
             </li>
             <li>
-              <a href="#about">Gallery</a>
+              <a href="/gallery">Gallery</a>
             </li>
             <li>
-              <a href="#launch">Register</a>
+              <a href="/register">Register</a>
             </li>
             <li>
-              <a href="#signup">Login</a>
+              <a href="/login">Login</a>
             </li>
             <li>
-              <a href="#signup">Book</a>
+              <a href="/book">Book</a>
             </li>
           </ul>
         </div>

@@ -33,6 +33,14 @@ html {
   scroll-behavior: smooth;
 }
 
+// pages
+.gallery,
+.register,
+.book {
+  height: 70vh;
+  background: #2e2e2e;
+}
+
 // buttons
 button{
   width: 180px;
