@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 import barber from "../assets/barber.svg";
 export default function Navbar({navTheme, setNavTheme}) {
   return (
@@ -8,20 +10,20 @@ export default function Navbar({navTheme, setNavTheme}) {
         </div>
         <div className='links-container' >
           <ul className="links">
-            <li className="active">
-              <a href="/" onClick={setNavTheme('light')}>Home</a>
+            <li>
+              <NavLink to="/" exact activeClassName onClick={setNavTheme('light')}>Home</NavLink>
             </li>
             <li>
-              <a href="/gallery" onClick={setNavTheme('dark')}>Gallery</a>
+              <NavLink to="/gallery" exact activeClassName onClick={setNavTheme('dark')}>Gallery</NavLink>
             </li>
             <li>
-              <a href="/register" onClick={setNavTheme('dark')}>Register</a>
+              <NavLink to="/register" exact activeClassName onClick={setNavTheme('dark')}>Register</NavLink>
             </li>
             <li>
-              <a href="/login" onClick={setNavTheme('dark')}>Login</a>
+              <NavLink to="/login" exact activeClassName onClick={setNavTheme('dark')}>Login</NavLink>
             </li>
             <li>
-              <a href="/book" onClick={setNavTheme('dark')}>Book</a>
+              <NavLink to="/book" exact activeClassName onClick={setNavTheme('dark')}>Book</NavLink>
             </li>
           </ul>
         </div>

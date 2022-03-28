@@ -16,7 +16,7 @@ export default function Hero(){
             </div>
             <h3>Welcome to Barber Shop Houston</h3>
             <button className="book-btn">
-                <a href="/">Book</a>    
+                <a href="/book">Book</a>    
             </button>
         </div>
     )
