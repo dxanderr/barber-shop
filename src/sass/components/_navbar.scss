@@ -1,12 +1,21 @@
 nav {
   position:relative;
-  max-width: 1200px;
-  margin: 0 auto;
 
-  .nav-container{
+  // dark theme
+  .dark{
+    background: #0e0e0e;
+    color: white;
+  }
+  //light theme
+  .light{
+    background: transparent;
+    color: black;
+  }
+
+  .dark,
+  .light{
     position: absolute;
     width: 100%;
-    background: none;
     z-index: 1;
     overflow: hidden;
 
