@@ -23,9 +23,9 @@ function App() {
         <Navbar navTheme={navTheme} setNavTheme={setNavTheme}/>
         <Routes>
           <Route path="/" exact element={<Home />} />
-          <Route path="/" exact element={<Gallery />} />
-          <Route path="/" exact element={<Register />} />
-          <Route path="/" exact element={<Login />} />
+          <Route path="/gallery" exact element={<Gallery />} />
+          <Route path="/register" exact element={<Register />} />
+          <Route path="/login" exact element={<Login />} />
           <Route path="/book" exact element={<Book />}  />
           <Route path="/book/shopx" exact element={<ShopX />}  />
         </Routes>
