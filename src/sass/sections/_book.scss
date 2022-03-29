@@ -1,9 +1,10 @@
 .book-container{
+
     height: 100%;
     min-height: 100vh;
     background: white;
     padding-top: 260px;
-
+    
     h4{
         color: black;
         margin-top: 40px;
@@ -16,25 +17,34 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        .shop-card{
-            background-image: linear-gradient(to top, lightgrey 0%, lightgrey 1%, #e0e0e0 26%, #efefef 48%, #d9d9d9 75%, #bcbcbc 100%);
-;           border-radius: 10px;
-            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-            .shop-image-container{
-                position: relative;
-                width: 300px;
-                height: 160px;
-                img{
-                    position: absolute;
-                    height: 100%;
-                    width: 100%;
-                    object-fit: cover;
-                    border-radius: 10px 10px 0 0;
-                }
+        .shop-link{
+            transition: all .4s ease-in-out;
+            &:hover{
+                box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+                border-radius: 10px;
+                transform: translateY(-4px);
             }
-            .shop-details{
-                padding: 10px;
+            .shop-card{
+                background-image: linear-gradient(to top, lightgrey 0%, lightgrey 1%, #e0e0e0 26%, #efefef 48%, #d9d9d9 75%, #bcbcbc 100%);
+    ;           border-radius: 10px;
+                box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+                .shop-image-container{
+                    position: relative;
+                    width: 300px;
+                    height: 160px;
+                    img{
+                        position: absolute;
+                        height: 100%;
+                        width: 100%;
+                        object-fit: cover;
+                        border-radius: 10px 10px 0 0;
+                    }
+                }
+                .shop-details{
+                    padding: 10px;
+                }
             }
         }
     }
 }
+

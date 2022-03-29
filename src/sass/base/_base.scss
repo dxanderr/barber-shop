@@ -78,7 +78,19 @@ button{
   .light{
     background: transparent;
   }
+  
+  // Page Settings
+  .gallery-container,
+  .register-container,
+  .login-container,
+  .book-container{
+      height: 100%;
+      min-height: 100vh;
+      background: white;
+      padding-top: 260px;
+  }
 }
+
 
 @media only screen and (min-device-width: 280px) and (max-device-width: 1080px) {
   .app-container::-webkit-scrollbar {

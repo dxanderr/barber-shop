@@ -3,10 +3,11 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import Home from "./components/pages/Home";
-import Gallery from "./components/Gallery";
-import Register from "./components/Register"
+import Gallery from "./components/pages/Gallery";
+import Register from "./components/pages/Register"
 import Book from "./components/pages/Book";
-import Login from "./components/Login"
+import ShopX from './components/pages/ShopX';
+import Login from "./components/pages/Login";
 // import scrollreveal from "scrollreveal";
 import "./sass/index.scss";
 function App() {
@@ -26,6 +27,7 @@ function App() {
           <Route path="/" exact element={<Register />} />
           <Route path="/" exact element={<Login />} />
           <Route path="/book" exact element={<Book />}  />
+          <Route path="/book/shopx" exact element={<ShopX />}  />
         </Routes>
         <Footer />
       </div>

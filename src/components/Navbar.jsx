@@ -1,7 +1,9 @@
 import { NavLink } from "react-router-dom";
+import { useEffect } from "react";
 
 import barber from "../assets/barber.svg";
 export default function Navbar({navTheme, setNavTheme}) {
+
   return (
     <nav>
       <div className={navTheme}>
@@ -11,19 +13,19 @@ export default function Navbar({navTheme, setNavTheme}) {
         <div className='links-container' >
           <ul className="links">
             <li>
-              <NavLink to="/" exact activeClassName onClick={setNavTheme('light')}>Home</NavLink>
+              <NavLink to="/" exact activeClassName >Home</NavLink>
             </li>
             <li>
-              <NavLink to="/gallery" exact activeClassName onClick={setNavTheme('dark')}>Gallery</NavLink>
+              <NavLink to="/gallery" exact activeClassName >Gallery</NavLink>
             </li>
             <li>
-              <NavLink to="/register" exact activeClassName onClick={setNavTheme('dark')}>Register</NavLink>
+              <NavLink to="/register" exact activeClassName >Register</NavLink>
             </li>
             <li>
-              <NavLink to="/login" exact activeClassName onClick={setNavTheme('dark')}>Login</NavLink>
+              <NavLink to="/login" exact activeClassName >Login</NavLink>
             </li>
             <li>
-              <NavLink to="/book" exact activeClassName onClick={setNavTheme('dark')}>Book</NavLink>
+              <NavLink to="/book" exact activeClassName >Book</NavLink>
             </li>
           </ul>
         </div>
