@@ -1,5 +1,5 @@
 import team from '../Teammates';
-import ReactDOM from 'react-dom';
+
 export default function ShopX(){
 
     const teammatePanels = team.map( barber =>{

@@ -1,71 +1,59 @@
 nav {
 
   position:relative;
-
+  background: #0e0e0e;
+  color: white;
+  
   .active{
     border-bottom: 1px solid red;
   }
 
-  // dark theme
-  .dark{
-    background: #0e0e0e;
-    color: white;
-  }
-  //light theme
-  .light{
-    background: transparent;
-    color: black;
-  }
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  overflow: hidden;
 
-  .dark,
-  .light{
-    position: absolute;
-    width: 100%;
-    z-index: 1;
-    overflow: hidden;
+  .brand {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0 20px 0; // space above logo
 
-    .brand {
+    img {
+      height:100px;
+    }
+
+  }
+  
+  .links-container{
+    .links{
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
-      margin: 40px 0 20px 0; // space above logo
+      list-style-type: none;
+      li{ 
+        padding: 10px 20px;
+        a{
+          font-family: "Kaushan Script";
+          font-size: 14px;
+          color: #fff;
+          padding-bottom: 5px;
+          text-decoration: none;
+          &:hover{
+            border-bottom: 1px solid rgb(193, 191, 191);
+          }
+        }
 
-      img {
-        height:100px;
       }
 
-    }
-    
-    .links-container{
-      .links{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        list-style-type: none;
-        li{ 
-          padding: 10px 20px;
-          a{
-            font-family: "Kaushan Script";
-            font-size: 14px;
-            color: #fff;
-            padding-bottom: 5px;
-            text-decoration: none;
-            &:hover{
-              border-bottom: 1px solid rgb(193, 191, 191);
-            }
-          }
+      @include breakpoint-down(small){
+        margin: 0 auto;
+        width: 60%
+      }
 
-        }
-
-        @include breakpoint-down(small){
-          margin: 0 auto;
-          width: 60%
-        }
-
-        // underline current page
-        li.active{
-          a{
-            border-bottom: 2px solid #fff;
-          }
+      // underline current page
+      li.active{
+        a{
+          border-bottom: 2px solid #fff;
         }
       }
     }

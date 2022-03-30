@@ -12,15 +12,17 @@ import Login from "./components/pages/Login";
 import "./sass/index.scss";
 function App() {
   const [navTheme, setNavTheme] = useState("dark");
-  // const changeTheme = () => {
-  //   console.log('theme changed')
-  //   navTheme === "dark" ? setNavTheme("light") : setNavTheme("dark");
-  // };
+  const lightTheme = () => {
+    setNavTheme("light");
+  };
+  const darkTheme = () => {
+    setNavTheme("dark");
+  };
 
   return (
     <Router>
       <div className="app-container">
-        <Navbar navTheme={navTheme} setNavTheme={setNavTheme}/>
+        <Navbar className={navTheme} darkTheme={darkTheme} lightTheme={lightTheme}/>
         <Routes>
           <Route path="/" exact element={<Home />} />
           <Route path="/gallery" exact element={<Gallery />} />
