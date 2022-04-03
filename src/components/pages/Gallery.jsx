@@ -4,7 +4,7 @@ import Photos from "../GalleryData";
 export default function Gallery() {
     const galleryPhotos = Photos.map(photo =>{
         return (
-            <div className="gallery-item-wrap">
+            <div className={photo.class}>
                 <div className="gallery-item">
                     <div className="image">
                         <img src={photo.image} alt={photo.title}/>
