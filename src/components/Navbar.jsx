@@ -31,3 +31,5 @@ export default function Navbar({navTheme, darkTheme, lightTheme}) {
     </nav>
   );
 }
+
+
