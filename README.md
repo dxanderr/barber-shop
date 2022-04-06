@@ -8,11 +8,9 @@
   - Practice Configuring a React App while using sass map for responsiveness and seperating sass files. 
   
 ## Future (Potential) Add-ons  
-- Calendly API
-- Auth Context || JWT
 - React-Router
-- MongoDB
-- CRUD Capabilities - User Schema / Objects
+- Firebase || Auth Context and DB (CRUD Capabilities - User Schema / Objects)
+- Calendly API
 - Newsletter API ( MailChimp )
 
 
