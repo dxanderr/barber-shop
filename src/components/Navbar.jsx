@@ -1,9 +1,6 @@
 import { NavLink } from "react-router-dom";
-
-
 import barber from "../assets/barber.svg";
 export default function Navbar(props) {
-
   return (
     <nav className={props.homeTheme ? "home" : ""}>
       <div className="brand">
@@ -16,7 +13,7 @@ export default function Navbar(props) {
               to="/" 
               exact 
               activeClassName 
-              onClick={props.homeTheme ? "" : props.toggleTheme}
+              onClick={!props.homeTheme && props.toggleTheme}
             >
               Home
             </NavLink>
@@ -26,7 +23,7 @@ export default function Navbar(props) {
               to="/gallery" 
               exact 
               activeClassName 
-              onClick={props.homeTheme ? props.toggleTheme : ""}
+              onClick={props.homeTheme && props.toggleTheme}
             >
               Gallery
             </NavLink>
@@ -36,7 +33,7 @@ export default function Navbar(props) {
               to="/register" 
               exact 
               activeClassName 
-              onClick={props.homeTheme ? props.toggleTheme : ""}
+              onClick={props.homeTheme && props.toggleTheme}
             >
               Register
             </NavLink>
@@ -46,7 +43,7 @@ export default function Navbar(props) {
               to="/login" 
               exact 
               activeClassName 
-              onClick={props.homeTheme ? props.toggleTheme : ""}
+              onClick={props.homeTheme && props.toggleTheme}
             >
               Login
             </NavLink>
@@ -56,13 +53,19 @@ export default function Navbar(props) {
               to="/book" 
               exact 
               activeClassName 
-              onClick={props.homeTheme ? props.toggleTheme : ""}
+              onClick={props.homeTheme && props.toggleTheme}
               >
                 Book
             </NavLink>
           </li>
         </ul>
       </div>
+      { props.bookingMenu ? 
+        <div className="booking-menu">
+          <button className="booking-btn book">Book</button>
+          <button className="booking-btn appointments">My Appointments</button>
+        </div> : ""
+      }
     </nav>
   );
 }

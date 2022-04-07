@@ -58,6 +58,24 @@ nav {
       }
     }
   }
+
+  .booking-menu{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    .booking-btn{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 20px 10px;
+      border-radius: 5px;
+      background: #fff;
+      color: #0e0e0e;
+      width: 140px;
+      height: 30px;
+    }
+  }
 }
 
 nav.home{

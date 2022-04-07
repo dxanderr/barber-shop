@@ -12,9 +12,14 @@ import Login from "./components/pages/Login";
 import "./sass/index.scss";
 function App() {
   const [homeTheme, setHomeTheme] = useState(true);
-
+  const [bookingMenu, setBookingMenu] = useState(true);
+  
   function toggleTheme(){
     setHomeTheme(prevTheme => !prevTheme)
+  }
+
+  function toggleBookingMenu(){
+    setBookingMenu(prevState => !prevState)
   }
 
   const currentUser = false;
@@ -28,7 +33,9 @@ function App() {
       <div className="app-container">
         <Navbar 
           homeTheme={homeTheme} 
-          toggleTheme={toggleTheme}  
+          toggleTheme={toggleTheme}
+          bookingMenu={bookingMenu}
+          toggleBookingMenu={toggleBookingMenu}  
         />
         <Routes>
           <Route path="/" exact element={<Home />} />
