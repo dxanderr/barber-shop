@@ -11,13 +11,11 @@ import Login from "./components/pages/Login";
 // import scrollreveal from "scrollreveal";
 import "./sass/index.scss";
 function App() {
-  const [navTheme, setNavTheme] = useState("dark");
-  const lightTheme = () => {
-    setNavTheme("light");
-  };
-  const darkTheme = () => {
-    setNavTheme("dark");
-  };
+  const [homeTheme, setHomeTheme] = useState(true);
+
+  function toggleTheme(){
+    setHomeTheme(prevTheme => !prevTheme)
+  }
 
   const currentUser = false;
 
@@ -28,7 +26,10 @@ function App() {
   return (
     <Router>
       <div className="app-container">
-        <Navbar className={navTheme} darkTheme={darkTheme} lightTheme={lightTheme}/>
+        <Navbar 
+          homeTheme={homeTheme} 
+          toggleTheme={toggleTheme}  
+        />
         <Routes>
           <Route path="/" exact element={<Home />} />
           <Route path="/gallery" exact element={<Gallery />} />
