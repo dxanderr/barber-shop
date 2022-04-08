@@ -1,8 +1,8 @@
 import { NavLink } from "react-router-dom";
 import barber from "../assets/barber.svg";
-export default function Navbar(props) {
+export default function Navbar({theme, booking}) {
   return (
-    <nav className={props.theme}>
+    <nav className={theme}>
       <div className="brand">
         <img src={barber} alt="logo" className="logo" />
       </div>
@@ -28,6 +28,15 @@ export default function Navbar(props) {
           </li>
           <li>
             <NavLink 
+              to="/book" 
+              exact 
+              activeClassName 
+              >
+                Book
+            </NavLink>
+          </li>
+          <li>
+            <NavLink 
               to="/register" 
               exact 
               activeClassName 
@@ -44,23 +53,14 @@ export default function Navbar(props) {
               Login
             </NavLink>
           </li>
-          <li>
-            <NavLink 
-              to="/book" 
-              exact 
-              activeClassName 
-              >
-                Book
-            </NavLink>
-          </li>
         </ul>
       </div>
-      { props.bookingMenu ? 
-        <div className="booking-menu">
-          <button className="booking-btn book">Book</button>
-          <button className="booking-btn appointments">My Appointments</button>
-        </div> : ""
-      }
+
+      { booking && <div className="booking-menu">
+        <a className="booking-btn book">Book</a>
+        <a className="booking-btn appointments">My Appointments</a>
+      </div>}
+      
     </nav>
   );
 }

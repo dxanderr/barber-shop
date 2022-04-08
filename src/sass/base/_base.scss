@@ -5,22 +5,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap');
 
 :root {
-  --pink: #ff3998;
   --blue: #4FC5EB;
   --subtle-blue: #2986c9;
-  --red: #ff3939;
-  --light-green: #edfff6;
-  --light-orange: #fff0e8;
-  --accent-color1: #ffffff;
-  --accent-color2: #555555;
   --accent-color3: #cccccc;
-  --card-color: #000000;
-  --background: #fff;
   --dark: #1e1e1e;
   --font-family: "Nunito Sans", sans-serif;
   --alternate-font: "Oswald", sans-serif ;
   --third-font: "Merriweather", sans-serif;
-  --scrollbar: #cf9090;
+  --scrollbar: #252323;
 }
 
 * {
@@ -45,6 +37,7 @@ html {
   color: #000;
   padding: 10px 0;
   text-decoration: none;
+  font-family: var(--alternate-font);
   background-color: rgba(255, 255, 255, 0.7);
   transition: all .4s ease-in-out;
 
@@ -80,10 +73,16 @@ html {
 
 
 
+
 @media only screen and (min-device-width: 280px) and (max-device-width: 1080px) {
   .app-container::-webkit-scrollbar {
     display: none;
   }
+}
+
+.login-container,
+.register-container{
+  margin-bottom: 40px;
 }
 
 ::-webkit-scrollbar {

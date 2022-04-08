@@ -1,7 +1,7 @@
 nav {
   position:relative;
   width: 100%;
-  padding: 40px 0;
+  padding: 20px 0;
   color: white;
   
   .active{
@@ -9,6 +9,7 @@ nav {
   }
 
   .brand {
+    padding: 20px;
     display: flex;
     justify-content: center;
     img {
@@ -19,6 +20,7 @@ nav {
   
   .links-container{
     .links{
+      padding: 10px 0;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
@@ -63,15 +65,29 @@ nav {
       align-items: center;
       margin: 20px 10px;
       border-radius: 5px;
-      background: #fff;
-      color: #0e0e0e;
-      width: 140px;
+      width: 160px;
       height: 30px;
+      color: #0e0e0e;
+      font-size: 14px;
+      @include breakpoint-down(small){
+        margin: 10px 5px;
+      }      
 
+    }
+      
+    .booking-btn.book{
+      background:rgb(193, 191, 191);
+    }
+    .booking-btn.appointments{
+      background: #fff;
       &:hover{
         opacity: 0.6;
       }
     }
+    @include breakpoint-down(small){
+      flex-direction: column;
+    }
+
   }
 }
 

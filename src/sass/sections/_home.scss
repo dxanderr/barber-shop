@@ -12,7 +12,7 @@
       object-fit: contain;
       height: 600px;
       width: 100%;
-      top: -220px;
+      top: -280px;
       z-index: -1; 
     }
 
@@ -169,10 +169,6 @@
       align-items: center;
       background: #0e0e0e;
       font-family: var(--alternate-font);
-
-      @include breakpoint-down(small){
-        width: 360px;
-      }
 
       .team-section-header{
         font-size: 30px;
