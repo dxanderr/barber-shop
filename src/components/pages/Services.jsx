@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Navbar from "../Navbar";
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io'
+import { AiOutlineSchedule } from 'react-icons/ai'
 
 export default function Services(){
     const [servicesDropdown, setServicesDropdown] = useState(true);
@@ -22,7 +23,9 @@ export default function Services(){
                                     <p>0 services selected</p>    
                                 </div>
                                 <div className="right-side">
-                                    <a className="next-btn active" href="/">Next</a>    
+                                    <a className="next-btn" href="/">Next
+                                        <AiOutlineSchedule className="cart-icon" />
+                                    </a>    
                                 </div>    
                             </li>
                             <div className="services-section">
@@ -33,9 +36,104 @@ export default function Services(){
                                             <span      className="section-icon"><IoIosArrowDown/></span> :
                                             <span className="section-icon"><IoIosArrowUp /></span>
                                         } 
-                                    </div>    
+                                    </div>   
+                                    <div className="expand-btn"><p>Show all 8 services</p></div>
+                                    <li className="services-option">
+                                        <div className="services-option-left">
+                                            <p className="services-option-title">Hair and Beard</p>
+                                            <p className="price-time"><i>30 minutes, $20 </i></p>
+                                        </div>
+                                        <div className="services-option-right">
+                                            <a className="service-option-select" ahref="/">Select</a>
+                                        </div>
+                                    </li>
+                                    <li className="services-option">
+                                        <div className="services-option-left">
+                                            <p className="services-option-title">Hair and Beard</p>
+                                            <p className="price-time"><i>30 minutes, $20 </i></p>
+                                        </div>
+                                        <div className="services-option-right">
+                                            <a className="service-option-select" ahref="/">Select</a>
+                                        </div>
+                                    </li>
+                                    <li className="services-option">
+                                        <div className="services-option-left">
+                                            <p className="services-option-title">Hair and Beard</p>
+                                            <p className="price-time"><i>30 minutes, $20 </i></p>
+                                        </div>
+                                        <div className="services-option-right">
+                                            <a className="service-option-select" ahref="/">Select</a>
+                                        </div>
+                                    </li>
+                                    <li className="services-option">
+                                        <div className="services-option-left">
+                                            <p className="services-option-title">Hair and Beard</p>
+                                            <p className="price-time"><i>30 minutes, $20 </i></p>
+                                        </div>
+                                        <div className="services-option-right">
+                                            <a className="service-option-select" ahref="/">Select</a>
+                                        </div>
+                                    </li>
                                 </li>
                             </div>
+                            <div className="services-section">
+                                <li className="list-group-item">
+                                    <div className="section-title" onClick={toggleDropdown}>
+                                        <h2 className="section-title-text">Kids</h2>    
+                                        { servicesDropdown ? 
+                                            <span      className="section-icon"><IoIosArrowDown/></span> :
+                                            <span className="section-icon"><IoIosArrowUp /></span>
+                                        } 
+                                    </div>   
+                                    <div className="expand-btn"><p>Show all 8 services</p></div>
+                                    <li className="services-option">
+                                        <div className="services-option-left">
+                                            <p className="services-option-title">Hair and Beard</p>
+                                            <p className="price-time"><i>30 minutes, $20 </i></p>
+                                        </div>
+                                        <div className="services-option-right">
+                                            <a className="service-option-select" ahref="/">Select</a>
+                                        </div>
+                                    </li>
+                                    <li className="services-option">
+                                        <div className="services-option-left">
+                                            <p className="services-option-title">Hair and Beard</p>
+                                            <p className="price-time"><i>30 minutes, $20 </i></p>
+                                        </div>
+                                        <div className="services-option-right">
+                                            <a className="service-option-select" ahref="/">Select</a>
+                                        </div>
+                                    </li>
+                                    <li className="services-option">
+                                        <div className="services-option-left">
+                                            <p className="services-option-title">Hair and Beard</p>
+                                            <p className="price-time"><i>30 minutes, $20 </i></p>
+                                        </div>
+                                        <div className="services-option-right">
+                                            <a className="service-option-select" ahref="/">Select</a>
+                                        </div>
+                                    </li>
+                                    <li className="services-option">
+                                        <div className="services-option-left">
+                                            <p className="services-option-title">Hair and Beard</p>
+                                            <p className="price-time"><i>30 minutes, $20 </i></p>
+                                        </div>
+                                        <div className="services-option-right">
+                                            <a className="service-option-select" ahref="/">Select</a>
+                                        </div>
+                                    </li>
+                                </li>
+                            </div>
+                            <li id="cart-summary">
+                                <div className="cart-summary-left">
+                                    <p>0 services selected</p>
+                                </div>
+                                <div className="cart-summary-right">
+                                    <a className="cart-summary-next-btn" href="/">Next 
+                                        <AiOutlineSchedule className="cart-icon" />
+                                    </a>
+                                </div>
+                            </li>
                         </form>    
                     </ul>    
                 </div>    
