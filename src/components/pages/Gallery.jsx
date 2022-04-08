@@ -1,5 +1,6 @@
 import React from "react";
 import Photos from "../GalleryData";
+import Navbar from "../Navbar";
 
 export default function Gallery() {
     const galleryPhotos = Photos.map(photo =>{
@@ -16,7 +17,8 @@ export default function Gallery() {
     })
     return (
         <div className="gallery-container">
-            <h4>Gallery</h4>
+            <Navbar theme="dark"/>
+            <h4 className="gallery-header">Gallery</h4>
             <div className="gallery-wrap">
                 {galleryPhotos}    
             </div>

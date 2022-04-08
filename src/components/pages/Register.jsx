@@ -1,8 +1,10 @@
 import React from "react";
+import Navbar from "../Navbar";
 
 export default function Register() {
     return (
         <div className="register-container">
+            <Navbar theme="dark"/>
             <form>
                 <h4>Register</h4>
                 <p className="header-text">Sign up to book appointments</p>

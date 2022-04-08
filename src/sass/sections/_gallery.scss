@@ -1,16 +1,20 @@
-.gallery-container{
-    
-    margin: 0 auto;
-    padding: 40px;
-    max-width: 900px;
-    
-    .gallery-wrap{
+.gallery-container{    
+    .gallery-header{
+        font-family: var(--font-family);
+        font-size: 24px;
         text-align: center;
+        padding-top: 20px;
+    }
+    .gallery-wrap{
+        margin: 0 auto;
+        text-align: center;
+        padding: 40px 20px;
         display:grid;
         grid-template-columns: repeat(6, 1fr);
         grid-auto-rows: 100px 200px;
         grid-gap: 10px;
         grid-auto-flow: dense;
+        max-width: 900px;
 
         .gallery-item-wrap{
             
@@ -120,8 +124,8 @@
         .h-2{
             grid-row: span 2;
         }
+    
+
+
     }
-
-
-
 }

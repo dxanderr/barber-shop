@@ -2,6 +2,7 @@ import {useState } from "react";
 import {useNavigate} from "react-router-dom"
 import { signInWithEmailAndPassword } from "firebase/auth";
 import {auth} from "../../firebase"
+import Navbar from "../Navbar";
 
 export default function Login() {
     const [error, setError] = useState(false);
@@ -26,6 +27,7 @@ export default function Login() {
 
     return (
         <div className="login-container">
+            <Navbar theme="dark" />
             <form onSubmit={handleLogin}>
                 <h4>Login</h4>
                 <p className="header-text">Login to book an appointment</p>

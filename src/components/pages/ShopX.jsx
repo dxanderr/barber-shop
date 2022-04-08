@@ -1,3 +1,4 @@
+import Navbar from '../Navbar';
 import team from '../Teammates';
 
 export default function ShopX(){
@@ -16,6 +17,7 @@ export default function ShopX(){
     })
     return(
         <div className="shopx-container">
+            <Navbar theme="dark"/>
             <h4>Choose a Barber</h4>
             {teammatePanels}
         </div>

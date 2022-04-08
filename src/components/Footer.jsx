@@ -28,7 +28,7 @@ export default function Footer() {
         <span>&copy; Copyright 2022 Momentous Marketing</span>
         <div className="cookies-container">
           <p className="cookies-statement">We use <a href="/" className="cookies-link">cookies.</a></p>
-          <button className="cookies-button">Got it!</button>
+          <button className="button cookies-button">Got it!</button>
         </div>
       </div>
     </footer>

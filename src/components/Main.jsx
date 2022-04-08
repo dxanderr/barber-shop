@@ -18,9 +18,9 @@ export default function Main(){
             
             {/* Button Group */}
             <section className="button-group">
-                <button className="buttons"><a href="/">Register</a></button>    
-                <button className="buttons"><a href="/">Login</a></button>    
-                <button className="buttons"><a href="/">Book</a></button>    
+                <a className="button main-buttons" href="/register">Register</a>    
+                <a className="button main-buttons" href="/login">Login</a>    
+                <a className="button main-buttons" href="/book">Book</a>    
             </section>
 
             {/* Flex Group | Logo Block and Welcome Message */}

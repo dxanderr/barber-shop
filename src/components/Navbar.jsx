@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 import barber from "../assets/barber.svg";
 export default function Navbar(props) {
   return (
-    <nav className={props.homeTheme ? "home" : ""}>
+    <nav className={props.theme}>
       <div className="brand">
         <img src={barber} alt="logo" className="logo" />
       </div>
@@ -13,7 +13,6 @@ export default function Navbar(props) {
               to="/" 
               exact 
               activeClassName 
-              onClick={!props.homeTheme && props.toggleTheme}
             >
               Home
             </NavLink>
@@ -23,7 +22,6 @@ export default function Navbar(props) {
               to="/gallery" 
               exact 
               activeClassName 
-              onClick={props.homeTheme && props.toggleTheme}
             >
               Gallery
             </NavLink>
@@ -33,7 +31,6 @@ export default function Navbar(props) {
               to="/register" 
               exact 
               activeClassName 
-              onClick={props.homeTheme && props.toggleTheme}
             >
               Register
             </NavLink>
@@ -43,7 +40,6 @@ export default function Navbar(props) {
               to="/login" 
               exact 
               activeClassName 
-              onClick={props.homeTheme && props.toggleTheme}
             >
               Login
             </NavLink>
@@ -53,7 +49,6 @@ export default function Navbar(props) {
               to="/book" 
               exact 
               activeClassName 
-              onClick={props.homeTheme && props.toggleTheme}
               >
                 Book
             </NavLink>

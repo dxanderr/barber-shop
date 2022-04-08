@@ -31,12 +31,6 @@ function App() {
   return (
     <Router>
       <div className="app-container">
-        <Navbar 
-          homeTheme={homeTheme} 
-          toggleTheme={toggleTheme}
-          bookingMenu={bookingMenu}
-          toggleBookingMenu={toggleBookingMenu}  
-        />
         <Routes>
           <Route path="/" exact element={<Home />} />
           <Route path="/gallery" exact element={<Gallery />} />

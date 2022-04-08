@@ -1,9 +1,10 @@
 import { NavLink } from 'react-router-dom'
 import HeroBg from '../../assets/hero.jpeg'
-
+import Navbar from '../Navbar'
 export default function Book(){
     return(
         <div className="book-container">
+            <Navbar theme="dark"/>
             <h4>Choose Shop</h4>
             <div className="shop-cards-container">
                 <NavLink to="/book/shopx" className="shop-link">

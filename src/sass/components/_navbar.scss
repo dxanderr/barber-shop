@@ -1,23 +1,16 @@
 nav {
-
   position:relative;
-  background: #0e0e0e;
+  width: 100%;
+  padding: 40px 0;
   color: white;
   
   .active{
     border-bottom: 1px solid red;
   }
 
-  position: absolute;
-  width: 100%;
-  z-index: 1;
-  overflow: hidden;
-
   .brand {
     display: flex;
     justify-content: center;
-    margin: 40px 0 20px 0; // space above logo
-
     img {
       height:100px;
     }
@@ -74,10 +67,18 @@ nav {
       color: #0e0e0e;
       width: 140px;
       height: 30px;
+
+      &:hover{
+        opacity: 0.6;
+      }
     }
   }
 }
 
-nav.home{
+nav.light{
   background: transparent;
+}
+
+nav.dark{
+  background: #0e0e0e;
 }
