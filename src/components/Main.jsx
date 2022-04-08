@@ -1,4 +1,3 @@
-import ReactDOM from 'react-dom';
 import logo from "../assets/barber.svg"
 import Map from "../assets/map.png"
 import team from "../components/Teammates"

@@ -10,6 +10,7 @@ import ShopX from './components/pages/ShopX';
 import Login from "./components/pages/Login";
 // import scrollreveal from "scrollreveal";
 import "./sass/index.scss";
+import Services from "./components/pages/Services";
 function App() {
   const [homeTheme, setHomeTheme] = useState(true);
   const [bookingMenu, setBookingMenu] = useState(true);
@@ -39,10 +40,14 @@ function App() {
           <Route path="/book" exact element={<Book />}  />
           <Route path="/book/shopx" exact 
             element={
-              <RequireAuth>
+
                 <ShopX />
-              </RequireAuth>
+
             }  
+          />
+          <Route path="/book/shopx/barber/services"
+          exact
+            element={<Services />}
           />
         </Routes>
         <Footer />

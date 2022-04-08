@@ -1,8 +1,8 @@
 import { NavLink } from "react-router-dom";
 import barber from "../assets/barber.svg";
-export default function Navbar({theme, booking}) {
+export default function Navbar(props) {
   return (
-    <nav className={theme}>
+    <nav className={props.theme}>
       <div className="brand">
         <img src={barber} alt="logo" className="logo" />
       </div>
@@ -56,11 +56,12 @@ export default function Navbar({theme, booking}) {
         </ul>
       </div>
 
-      { booking && <div className="booking-menu">
+      { props.booking && <div className="booking-menu">
         <a className="booking-btn book">Book</a>
         <a className="booking-btn appointments">My Appointments</a>
       </div>}
-      
+
+      { props.backBtn && <a className="back-btn" href="/book/shopx">Back</a>}
     </nav>
   );
 }

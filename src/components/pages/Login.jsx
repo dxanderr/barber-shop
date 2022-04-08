@@ -35,7 +35,7 @@ export default function Login() {
                 <input type="email" className="input-field" onChange={e=>setEmail(e.target.value)}></input>
                 <p className="form-text">Password</p>
                 <input type="password" className="input-field" onChange={e => setPassword(e.target.value)}></input>
-                <button type="submit">Log in</button>
+                <button className="button" type="submit">Log in</button>
                 {error && <span>Wrong email or password</span>}
             </form>
 

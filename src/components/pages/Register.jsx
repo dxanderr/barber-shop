@@ -18,7 +18,7 @@ export default function Register() {
                 <input type="text" className="input-field"></input>
                 <p className="form-text">Password Confirmation</p>
                 <input type="text" className="input-field"></input>
-                <button>Sign up</button>
+                <button className="button">Sign up</button>
             </form>
 
             <a href="/">Log in</a><br></br>

@@ -12,7 +12,7 @@ export default function ShopX(){
 
                         <p className="panel-name">{barber.name}</p>
                     </div>
-                    <button className="barber-selection-btn">Next</button>
+                    <a className="button barber-selection-btn" href="/book/shopx/barber/services">Next</a>
                 </div>
     })
     return(
