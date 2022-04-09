@@ -4,11 +4,25 @@ import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io'
 import { AiOutlineSchedule } from 'react-icons/ai'
 
 export default function Services(){
-    const [servicesDropdown, setServicesDropdown] = useState(true);
+    const [servicesDropdownIcon, setServicesDropdownIcon] = useState(true);
+    const [openDropdownMenus, setOpenDropdownMenus] = useState({
+        "adults": false,
+        "kids": false
+    })
 
-    function toggleDropdown(){
-        setServicesDropdown(prevState => !prevState)
+    
+    function toggleAdultMenu(){
+        setServicesDropdownIcon(prevState => !prevState)
+
+        setOpenDropdownMenus( prevState => {
+            return {
+                ...prevState,
+                adults: !prevState.adults
+            }
+        })
     }
+
+
 
     return(
         <div className="services-container">
@@ -30,9 +44,9 @@ export default function Services(){
                             </li>
                             <div className="services-section">
                                 <li className="list-group-item">
-                                    <div className="section-title" onClick={toggleDropdown}>
-                                        <h2 className="section-title-text">Services</h2>    
-                                        { servicesDropdown ? 
+                                    <div className="section-title" onClick={toggleAdultMenu}>
+                                        <h2 className="section-title-text">Adults</h2>    
+                                        { servicesDropdownIcon ? 
                                             <span      className="section-icon"><IoIosArrowDown/></span> :
                                             <span className="section-icon"><IoIosArrowUp /></span>
                                         } 
@@ -74,13 +88,31 @@ export default function Services(){
                                             <a className="service-option-select" ahref="/">Select</a>
                                         </div>
                                     </li>
+                                    <li className="services-option">
+                                        <div className="services-option-left">
+                                            <p className="services-option-title">Hair and Beard</p>
+                                            <p className="price-time"><i>30 minutes, $20 </i></p>
+                                        </div>
+                                        <div className="services-option-right">
+                                            <a className="service-option-select" ahref="/">Select</a>
+                                        </div>
+                                    </li>
+                                    <li className="services-option">
+                                        <div className="services-option-left">
+                                            <p className="services-option-title">Hair and Beard</p>
+                                            <p className="price-time"><i>30 minutes, $20 </i></p>
+                                        </div>
+                                        <div className="services-option-right">
+                                            <a className="service-option-select" ahref="/">Select</a>
+                                        </div>
+                                    </li>
                                 </li>
                             </div>
                             <div className="services-section">
                                 <li className="list-group-item">
-                                    <div className="section-title" onClick={toggleDropdown}>
+                                    <div className="section-title" onClick={toggleAdultMenu}>
                                         <h2 className="section-title-text">Kids</h2>    
-                                        { servicesDropdown ? 
+                                        { servicesDropdownIcon ? 
                                             <span      className="section-icon"><IoIosArrowDown/></span> :
                                             <span className="section-icon"><IoIosArrowUp /></span>
                                         } 

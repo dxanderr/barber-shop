@@ -83,13 +83,12 @@
                     }
 
                     .services-section{
-                        max-height: 550px;
-                        height: 400px;
+                        max-height: 400px;
+                        height: 100%;
                         position: relative;
                         overflow: hidden;
 
-                        .list-group-item{
-                            height: 60px;            
+                        .list-group-item{         
                             
                             .section-title{
                                 height: 80px;
