@@ -1,6 +1,6 @@
 .home {
   .hero-container{
-    height: 300px;
+    height: 270px;
     position: relative;
     background: transparent;
     display: flex;
@@ -91,28 +91,6 @@
     }
 
 
-    // Desktop Sizing
-    @include breakpoint-up(medLarge){
-      .flex-group{
-        display: flex;
-
-        .logo-block{
-          width: 50%;
-        }
-
-        .welcome-section{
-          height: 500px;
-          
-          .welcome-header{
-            font-size: 30px;
-          }
-
-          .welcome-message.second{
-            width: 80%;
-          }
-        }
-      }
-    }
     
     // Logo Block
     .logo-block{
@@ -137,7 +115,7 @@
         font-size: 24px;
         font-family: var(--alternate-font), sans-serif;
       }
-
+      
       .welcome-message{
         font-family: var(--third-font);
         font-size: 14px;
@@ -145,18 +123,43 @@
         justify-content: flex-start;
         padding: 4px 0;
       }
-
+      
       
       .welcome-message.first{
+        margin: 5px 0;
         font-weight: 700;
       }
-
+      
       .welcome-message.second{
         font-weight: 400;
         line-height: 1.45rem;
       }
     }
+    
+    // Welcome Message Desktop Sizing
+    @include breakpoint-up(medLarge){
+      .flex-group{
+        display: flex;
 
+        .logo-block{
+          width: 50%;
+        }
+
+        .welcome-section{
+          height: 500px;
+          
+          .welcome-header{
+            font-size: 30px;
+          }
+
+
+
+          .welcome-message.second{
+            width: 80%;
+          }
+        }
+      }
+    }
     // Team Section
     .team-section{
       height: 100%;
@@ -216,6 +219,105 @@
         width: 100%;
         top: 0;
       }
+    }
+
+    // Location and Work Hours Section
+    .location-hours-section{
+      height: 100%;
+      margin: 0 10%;
+      padding: 20px 0;
+      min-height: 400px;
+      max-width: 1200px;
+
+      .hours-location-header{
+        margin: 10px 0;
+        font-family: var(--alternate-font);
+        font-size: 40px;
+      }
+
+      .lh-data-container{
+        margin: 20px 0;
+        display: flex;
+        justify-content: space-between;
+
+        @include breakpoint-down(small){
+          display: block;
+        }
+
+        .lh-left-panel{
+          display: flex;
+          
+          .map-icon{
+            font-size: 34px;
+            margin-right: 40px;
+
+            @include breakpoint-down(medium){
+              font-size: 24px;
+              margin-right: 20px;
+            }            
+          }
+
+          .address > p{
+            font-family: var(--third-font);
+            font-size: 20px;
+            font-weight: 300;
+            padding-bottom: 4px;
+
+            @include breakpoint-down(medium){
+              font-size: 14px;
+            }
+          }
+
+          @include breakpoint-down(medium){
+            margin-bottom: 20px;
+          }
+        }
+
+        .lh-right-panel{
+          width: 60%;
+          display: flex;
+          justify-content: space-around;
+
+          @include breakpoint-down(small){
+            width: 100%;
+          }
+
+          .schedule-icon{
+            margin-right: 40px;
+            font-size: 34px;
+
+            @include breakpoint-down(medium){
+              font-size: 24px;
+              margin-right: 20px;
+            }
+          }
+
+          .hours-container{
+
+            table{
+              width: 280px;
+
+              @include breakpoint-down(medium){
+                width: 220px;
+              }
+
+              tr > *{
+                font-family: var(--third-font);
+                font-weight: 300;
+                padding-bottom: 10px;
+
+                @include breakpoint-down(medium){
+                  font-size: 12px;
+                }
+              }
+            }
+          }
+
+        }
+
+      }
+
+
     }
   }
 }

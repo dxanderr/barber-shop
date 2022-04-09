@@ -123,7 +123,7 @@
                             background: linear-gradient(rgba(251, 249, 249, 0.429) 0.42%, #878585);
                             color: black;
                             border: none;
-                            z-index: 1000;
+                            z-index: 10;
                         }
 
                         .services-option{
@@ -165,7 +165,7 @@
                         position: fixed;
                         bottom: 0;
                         left: 0;
-                        z-index: 1000000;
+                        z-index: 100;
                         margin: 0;
                         width: 100%;
                         background-color: #f0f0f0;
