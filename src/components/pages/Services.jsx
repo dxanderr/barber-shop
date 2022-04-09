@@ -1,28 +1,29 @@
 import { useState } from 'react';
 import Navbar from "../Navbar";
-import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io'
+// import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io'
 import { AiOutlineSchedule } from 'react-icons/ai'
+import Service from '../Service';
+import ServicesData from '../ServicesData';
 
 export default function Services(){
-    const [servicesDropdownIcon, setServicesDropdownIcon] = useState(true);
-    const [openDropdownMenus, setOpenDropdownMenus] = useState({
-        "adults": false,
-        "kids": false
-    })
+    const [services, setServices] = useState(ServicesData)
 
-    
-    function toggleAdultMenu(){
-        setServicesDropdownIcon(prevState => !prevState)
+    const servicesElements = services.map((service)=>(
+        <Service 
+            key={service.id}
+            title={service.category}
+            open={service.open}
+            toggle={()=>toggle(service.id)}
+        />
+    ))
 
-        setOpenDropdownMenus( prevState => {
-            return {
-                ...prevState,
-                adults: !prevState.adults
-            }
+    function toggle(id){
+        setServices(prevServices => {
+            return prevServices.map((service)=>{
+                return service.id === id ? {...service, open: !service.open, title: service.title} : service
+            })
         })
     }
-
-
 
     return(
         <div className="services-container">
@@ -42,120 +43,7 @@ export default function Services(){
                                     </a>    
                                 </div>    
                             </li>
-                            <div className="services-section">
-                                <li className="list-group-item">
-                                    <div className="section-title" onClick={toggleAdultMenu}>
-                                        <h2 className="section-title-text">Adults</h2>    
-                                        { servicesDropdownIcon ? 
-                                            <span      className="section-icon"><IoIosArrowDown/></span> :
-                                            <span className="section-icon"><IoIosArrowUp /></span>
-                                        } 
-                                    </div>   
-                                    <div className="expand-btn"><p>Show all 8 services</p></div>
-                                    <li className="services-option">
-                                        <div className="services-option-left">
-                                            <p className="services-option-title">Hair and Beard</p>
-                                            <p className="price-time"><i>30 minutes, $20 </i></p>
-                                        </div>
-                                        <div className="services-option-right">
-                                            <a className="service-option-select" ahref="/">Select</a>
-                                        </div>
-                                    </li>
-                                    <li className="services-option">
-                                        <div className="services-option-left">
-                                            <p className="services-option-title">Hair and Beard</p>
-                                            <p className="price-time"><i>30 minutes, $20 </i></p>
-                                        </div>
-                                        <div className="services-option-right">
-                                            <a className="service-option-select" ahref="/">Select</a>
-                                        </div>
-                                    </li>
-                                    <li className="services-option">
-                                        <div className="services-option-left">
-                                            <p className="services-option-title">Hair and Beard</p>
-                                            <p className="price-time"><i>30 minutes, $20 </i></p>
-                                        </div>
-                                        <div className="services-option-right">
-                                            <a className="service-option-select" ahref="/">Select</a>
-                                        </div>
-                                    </li>
-                                    <li className="services-option">
-                                        <div className="services-option-left">
-                                            <p className="services-option-title">Hair and Beard</p>
-                                            <p className="price-time"><i>30 minutes, $20 </i></p>
-                                        </div>
-                                        <div className="services-option-right">
-                                            <a className="service-option-select" ahref="/">Select</a>
-                                        </div>
-                                    </li>
-                                    <li className="services-option">
-                                        <div className="services-option-left">
-                                            <p className="services-option-title">Hair and Beard</p>
-                                            <p className="price-time"><i>30 minutes, $20 </i></p>
-                                        </div>
-                                        <div className="services-option-right">
-                                            <a className="service-option-select" ahref="/">Select</a>
-                                        </div>
-                                    </li>
-                                    <li className="services-option">
-                                        <div className="services-option-left">
-                                            <p className="services-option-title">Hair and Beard</p>
-                                            <p className="price-time"><i>30 minutes, $20 </i></p>
-                                        </div>
-                                        <div className="services-option-right">
-                                            <a className="service-option-select" ahref="/">Select</a>
-                                        </div>
-                                    </li>
-                                </li>
-                            </div>
-                            <div className="services-section">
-                                <li className="list-group-item">
-                                    <div className="section-title" onClick={toggleAdultMenu}>
-                                        <h2 className="section-title-text">Kids</h2>    
-                                        { servicesDropdownIcon ? 
-                                            <span      className="section-icon"><IoIosArrowDown/></span> :
-                                            <span className="section-icon"><IoIosArrowUp /></span>
-                                        } 
-                                    </div>   
-                                    <div className="expand-btn"><p>Show all 8 services</p></div>
-                                    <li className="services-option">
-                                        <div className="services-option-left">
-                                            <p className="services-option-title">Hair and Beard</p>
-                                            <p className="price-time"><i>30 minutes, $20 </i></p>
-                                        </div>
-                                        <div className="services-option-right">
-                                            <a className="service-option-select" ahref="/">Select</a>
-                                        </div>
-                                    </li>
-                                    <li className="services-option">
-                                        <div className="services-option-left">
-                                            <p className="services-option-title">Hair and Beard</p>
-                                            <p className="price-time"><i>30 minutes, $20 </i></p>
-                                        </div>
-                                        <div className="services-option-right">
-                                            <a className="service-option-select" ahref="/">Select</a>
-                                        </div>
-                                    </li>
-                                    <li className="services-option">
-                                        <div className="services-option-left">
-                                            <p className="services-option-title">Hair and Beard</p>
-                                            <p className="price-time"><i>30 minutes, $20 </i></p>
-                                        </div>
-                                        <div className="services-option-right">
-                                            <a className="service-option-select" ahref="/">Select</a>
-                                        </div>
-                                    </li>
-                                    <li className="services-option">
-                                        <div className="services-option-left">
-                                            <p className="services-option-title">Hair and Beard</p>
-                                            <p className="price-time"><i>30 minutes, $20 </i></p>
-                                        </div>
-                                        <div className="services-option-right">
-                                            <a className="service-option-select" ahref="/">Select</a>
-                                        </div>
-                                    </li>
-                                </li>
-                            </div>
+                            {servicesElements}
                             <li id="cart-summary">
                                 <div className="cart-summary-left">
                                     <p>0 services selected</p>
