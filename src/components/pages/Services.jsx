@@ -7,12 +7,14 @@ import ServicesData from '../ServicesData';
 
 export default function Services(){
     const [services, setServices] = useState(ServicesData)
+    
 
     const servicesElements = services.map((service)=>(
         <Service 
             key={service.id}
             title={service.category}
             open={service.open}
+            services={service.services}
             toggle={()=>toggle(service.id)}
         />
     ))
