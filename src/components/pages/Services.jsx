@@ -27,22 +27,32 @@ export default function Services(){
     }
 
     for( let i=0; i < allServices.length; i++){
-        addProp(dict, allServices[i], false)
+        addProp(dict, [i+1], false)
     }
 
     // Set Form State
-    const [formData, setFormData] = useState({dict})
+    const [formData, setFormData] = useState(dict)
+    
+    // Updating Form State
+    function handleChange(event) {
+        const { id, checked } = event.target
+        console.log(id, checked)
+        setFormData(prevFormData => {
+            return {
+                ...prevFormData,
+                [id]: checked
+            }
+        })
+    }
 
-    const servicesElements = serviceGroups.map((group)=>(
-        <Service 
-            key={group.id}
-            title={group.category}
-            open={group.open}
-            services={group.services}
-            toggle={()=>toggle(group.id)}
-        />
-    ))
+    // Update Next Button Once User Makes Selection
+    let selected = Object.values(formData).includes(true);
 
+    // Keep track of how many items have been selected
+    let num_selected = Object.values(formData).reduce((a, item) => a + item, 0)
+    console.log(num_selected)
+
+    // Toggling Group Dropdown Menu
     function toggle(id){
         setServiceGroups(prevState => {
             return prevState.map((group)=>{
@@ -50,8 +60,19 @@ export default function Services(){
             })
         })
     }
-
-
+    // Service Elements
+    const servicesElements = serviceGroups.map((group)=>(
+        <Service 
+            key={group.id}
+            id={group.id}
+            title={group.category}
+            open={group.open}
+            services={group.services}
+            toggle={()=>toggle(group.id)}
+            formData={formData}
+            handleChange={handleChange}
+        />
+    ))
     return(
         <div className="services-container">
             <Navbar theme="dark" backBtn={true}/>
@@ -65,7 +86,7 @@ export default function Services(){
                                     <p>0 services selected</p>    
                                 </div>
                                 <div className="right-side">
-                                    <a className="next-btn" href="/">Next
+                                    <a className={selected ? 'next-btn active' : 'next-btn'} href="/">Next
                                         <AiOutlineSchedule className="cart-icon" />
                                     </a>    
                                 </div>    
@@ -73,10 +94,13 @@ export default function Services(){
                             {servicesElements}
                             <li id="cart-summary">
                                 <div className="cart-summary-left">
-                                    <p>0 services selected</p>
+                                    <p>{num_selected !== 1 ? 
+                                        `${num_selected} services selected` : 
+                                        `${num_selected} service selected`}
+                                    </p>
                                 </div>
                                 <div className="cart-summary-right">
-                                    <a className="cart-summary-next-btn" href="/">Next 
+                                    <a className={selected ? "cart-summary-next-btn active" : "cart-summary-next-btn"} href="/">Next 
                                         <AiOutlineSchedule className="cart-icon" />
                                     </a>
                                 </div>
