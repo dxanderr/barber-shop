@@ -9,6 +9,7 @@ import Login from "./components/pages/Login";
 // import scrollreveal from "scrollreveal";
 import "./sass/index.scss";
 import Services from "./components/pages/Services";
+import Calendar from './components/pages/Calendar';
 function App() {
 
   // Auth Context - Firebase
@@ -32,6 +33,7 @@ function App() {
           <Route path="/book/shopx/barber/services" exact 
             element={<Services />}
           />
+          <Route path="/book/shopx/barber/services/calendar" exact element={<Calendar />} />ß
         </Routes>
         <Footer />
       </div>
