@@ -1,32 +1,51 @@
+import { useState } from 'react'
 import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io'
 
 export default function Service(props){
-    const {open, title,  toggle, services} = props
-
+    const {open, title,  toggle, services, formData, updateForm} = props
+    
+    // Service Option Component
     // Number of services for each category (Adult, Kid, etc..)
     const len = services.length
 
-    // Services Options Per Category
+    // Creating all components based on services passed from each category
     const serviceOptions = services.map((service, index) =>{
-        return(<li className="services-option">
-            <div className="services-option-left">
-                <p className="services-option-title">{services[index].service}</p>
-                <p className="price-time"><i>{`${services[index].price}, ${services[index].duration}`}</i></p>
+        const selection = services[index].service
+        const price = services[index].price
+        const duration = services[index].duration
+        return(
+            <div className="services-option" key={index}>
+                <div className="services-option-left">
+                    <p className="services-option-title">{selection}</p>
+                    <p className="price-time"><i>{`${price}, ${duration}`}</i></p>
+                </div>
+                <div className="services-option-right">
+                    <label 
+                        className="service-option-select"
+                        
+                    >
+                        <input 
+                            className="checkbox" 
+                            type="checkbox"
+                        />
+                        <span>Select</span>
+                    </label>
+                </div>
             </div>
-            <div className="services-option-right">
-                <label className="service-option-select">
-                    <input className="checkbox" type="checkbox" />
-                    <span>Select</span>
-                </label>
-            </div>
-        </li>)        
+        )        
     })
 
+    // Dynamic Styles - Show All Vs Default (3)
     const servicesSection = {
         maxHeight: open ? "inherit" : "400px"
     }
     const expandBtn = {
         display: open ? "none" : "flex"
+    }
+
+    // Only display arrow icon if more than 3 options
+    const arrowIcons = {
+        display: len > 3 ? "inherit" : "none"
     }
 
     return(
@@ -35,12 +54,12 @@ export default function Service(props){
                 <div className="section-title" id="adults" onClick={toggle}>
                     <h2 className="section-title-text">{title}</h2>
                     {open ?
-                        <span className="section-icon"><IoIosArrowUp /></span> :
-                        <span className="section-icon"><IoIosArrowDown /></span>
+                        <span className="section-icon" style={arrowIcons}><IoIosArrowUp /></span> :
+                        <span className="section-icon" style={arrowIcons}><IoIosArrowDown /></span>
                     }
                 </div>
                 {
-                    len > 4 && 
+                    len > 3 && 
                     <div 
                         className="expand-btn" 
                         style={expandBtn}

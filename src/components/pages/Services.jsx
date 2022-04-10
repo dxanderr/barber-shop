@@ -1,31 +1,56 @@
 import { useState } from 'react';
 import Navbar from "../Navbar";
-// import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io'
 import { AiOutlineSchedule } from 'react-icons/ai'
 import Service from '../Service';
 import ServicesData from '../ServicesData';
 
 export default function Services(){
-    const [services, setServices] = useState(ServicesData)
-    
+    const [serviceGroups, setServiceGroups] = useState(ServicesData)
 
-    const servicesElements = services.map((service)=>(
+    // Default form state based on groups ( Each barber/salon worker may serve different groups )
+    // Goal - Get 'service' keys (aka name of  service) for each group in array of groups and place in a new array. This array will be used to create a unique dictionary needed for the formState so that when users click on a particular service, this information can be updated with the form state. 
+
+    const output = (serviceGroups.map((service, index)=>{
+        return serviceGroups[index].services.map(serviceObj =>{
+            return `${serviceGroups[index].category}:${serviceObj.service}`
+        })
+    })).join(',')
+
+    // transform string to array
+    const allServices = output.split(',')
+
+    // Take Output ( List of Services ) and create an object that can represent our intial form state
+    let dict = {}
+    // Function to place services in dictionary
+    let addProp = (obj, propName, propValue)=>{
+        obj[propName] = propValue
+    }
+
+    for( let i=0; i < allServices.length; i++){
+        addProp(dict, allServices[i], false)
+    }
+
+    // Set Form State
+    const [formData, setFormData] = useState({dict})
+
+    const servicesElements = serviceGroups.map((group)=>(
         <Service 
-            key={service.id}
-            title={service.category}
-            open={service.open}
-            services={service.services}
-            toggle={()=>toggle(service.id)}
+            key={group.id}
+            title={group.category}
+            open={group.open}
+            services={group.services}
+            toggle={()=>toggle(group.id)}
         />
     ))
 
     function toggle(id){
-        setServices(prevServices => {
-            return prevServices.map((service)=>{
-                return service.id === id ? {...service, open: !service.open, title: service.title} : service
+        setServiceGroups(prevState => {
+            return prevState.map((group)=>{
+                return group.id === id ? {...group, open: !group.open} : group
             })
         })
     }
+
 
     return(
         <div className="services-container">
