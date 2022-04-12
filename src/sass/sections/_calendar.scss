@@ -35,7 +35,7 @@
     
             .item{
                 height: 100%;
-                background: rgb(193, 55, 55);
+                background: rgba(188, 185, 185, 0.271);  
                 font-family: var(--alternate-family);
     
                 .item-content{
@@ -60,17 +60,16 @@
                     }
     
                 }
-    
-                &:hover{
-                    background: rgba(193, 55, 55, 0.545);
-                }
             }
     
             // alternative colors (temporary)
             .item.item3,
-            .item.item5,
-            .item.item6{
-                background: rgba(188, 185, 185, 0.572);
+            .item.item6,
+            .item.item13,
+            .item.item14,
+            .item.item20
+            {
+                background: rgba(201, 72, 72, 0.572);
     
                 &:hover{
                 background: rgba(188, 185, 185, 0.271);               
@@ -80,7 +79,16 @@
             // alternative colors (temporary)
             .item.item4,
             .item.item7,
-            .item.item8{
+            .item.item10,
+            .item.item11,
+            .item.item17,
+            .item.item18,
+            .item.item21,
+            .item.item24,
+            .item.item25,
+            .item.item27,
+            .item.item28
+            {
                 background: rgb(6, 150, 6);
     
                 &:hover{
