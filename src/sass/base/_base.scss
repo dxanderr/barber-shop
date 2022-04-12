@@ -97,7 +97,7 @@ $breakpoints-up: ("medium": "31.25em", "medLarge":"50em", "large": "64em", "xlar
 
 
 // sass map ( 499px , 1023px , 1399px ) 
-$breakpoints-down: ("small":"31.1875em","medium": "63.9397em","medLarge":"50em",  "large":"87.4375em");
+$breakpoints-down: ("small":"31.1875em", "schmeed": "50rem", "medium": "63.9397em","medLarge":"50em",  "large":"87.4375em");
 
 @mixin breakpoint-up($size){
     @media(min-width: map-get($breakpoints-up, $size)){

@@ -1,26 +1,39 @@
 import Calendar from "../CalendarData"
+import Navbar from "../Navbar"
 
 export default function Scheduler(){
 
-
-    const test = Calendar.map((month, index)=>{
-        return Calendar[index]
+    const set = [1, 2, 3, 4, 5, 6, 7, 8]
+    const calendarElements = set.map(item =>{     
+        return(
+            <div key={item} className="calendar-item">  
+                <div className={`item item${item}`}>
+                    <div className="item-content">
+                        <span className="calendar-day">
+                            <i>
+                                Tues
+                            </i></span>
+                        
+                        <span className="num-day">{item}</span>
+                        
+                        Apr
+                    </div>
+                </div>
+            </div>
+        )
     })
 
-    console.log(test)
 
-    // const calendarElements = Calendar.map(month=>{
-    //     return (
-    //         <div className="day">
-                
-    //         </div>
-    //     )
-    // })
     return(
         <div className="calendar-container">
-           <h4>Choose a day</h4> 
-           <p>Houston Barber Shop</p>
-
+            <Navbar theme="dark" backBtn={true}/>
+           <h4 className="calendar-header">
+               Choose a day
+            </h4> 
+           <p className="calendar-subheader">Houston Barber Shop, Houston</p>
+           <div className="calendar-items-container">
+            {calendarElements}
+           </div>
         </div>
     )
 }
