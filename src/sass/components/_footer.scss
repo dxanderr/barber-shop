@@ -82,6 +82,10 @@ footer {
         border-radius: 10px;
         background: var(--subtle-blue);
         color: var(--accent-color3);
+
+        &:hover{
+          background: #0b4975;
+        }
       }
     }
   }
