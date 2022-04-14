@@ -5,146 +5,171 @@
         text-align: center;
         padding-top: 40px;
     }
-    .gallery-wrap{
-        margin: 0 auto;
-        text-align: center;
-        padding: 40px 20px;
-        display:grid;
-        grid-template-columns: repeat(6, 1fr);
-        grid-auto-rows: 100px 200px;
-        grid-gap: 10px;
-        grid-auto-flow: dense;
-        max-width: 900px;
 
-        @include breakpoint-down(medium){
-            grid-template-columns: repeat(2, 1fr);
-            grid-auto-rows: 100px;
-        }
-        @include breakpoint-down(small){
-            grid-template-columns: 1fr;
-            grid-auto-rows: 100px;
-        }
+    .gal-box{
+        display: flex;
+        justify-content: center;
+        align-items: center;     
         
-        .gallery-item-wrap{
+        .arrow{
+            width: 60px;
+            font-size: 30px;
+
+            &:hover{
+                transform: scale(1.2);
+            }
+        }
+
+        .arrow.left{
+            &:hover{
+                transform: translateX(-4px);
+            }
+        }
+        .arrow.right{
+            &:hover{
+                transform: translateX(4px);
+            }
+        }
+        .gallery-wrap{
+            text-align: center;
+            padding: 40px 20px;
+            display:grid;
+            grid-template-columns: repeat(6, 1fr);
+            grid-auto-rows: 100px 200px;
+            grid-gap: 10px;
+            grid-auto-flow: dense;
+            max-width: 900px;
+    
+            @include breakpoint-down(medium){
+                grid-template-columns: repeat(2, 1fr);
+                grid-auto-rows: 100px;
+            }
+            @include breakpoint-down(small){
+                grid-template-columns: 1fr;
+                grid-auto-rows: 100px;
+            }
             
-            .gallery-item{
-                width: 100%;
-                height: 100%;
-                position:relative;
+            .gallery-item-wrap{
                 
-                .image{
+                .gallery-item{
                     width: 100%;
                     height: 100%;
-                    overflow: hidden;
+                    position:relative;
                     
-                    img{
+                    .image{
                         width: 100%;
                         height: 100%;
-                        object-fit: cover;
-                        object-position: 50% 50%;
-                        cursor: pointer;
-                        transition: .5s ease-in-out;
-
-                        &:hover{
-                            transform: scale(1.3); 
+                        overflow: hidden;
+                        
+                        img{
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                            object-position: 50% 50%;
+                            cursor: pointer;
+                            transition: .5s ease-in-out;
+    
+                            &:hover{
+                                transform: scale(1.3); 
+                            }
+                        }
+    
+    
+                    }
+    
+                    .gallery-text{
+                       opacity: 0;
+                       position: absolute;
+                       top: 50%;
+                       left: 50%; 
+                       transform: translate(-50%, -50%);
+                        color: white;
+                        font-size: 18px;
+                        pointer-events: none;
+                        z-index: 5;
+                        transition: .6 ease-in-out;
+                    }
+                
+                    &:hover .gallery-text{
+                        opacity: 1;
+                        animation: move-down .3s linear;
+                        padding: 1rem;
+                        width: 100%;
+                    }
+    
+                    @keyframes move-down{
+                        0%{
+                            top: 10%;
+                            opacity: .2;
+                        }
+                        50%{
+                            top: 35%;
+                            opacity: .6;
+                        }
+                        100%{
+                            top: 50%;
+                            opacity: 1;
                         }
                     }
-
-
+                
                 }
-
-                .gallery-text{
-                   opacity: 0;
-                   position: absolute;
-                   top: 50%;
-                   left: 50%; 
-                   transform: translate(-50%, -50%);
-                    color: white;
-                    font-size: 18px;
-                    pointer-events: none;
-                    z-index: 5;
-                    transition: .6 ease-in-out;
-                }
-            
-                &:hover .gallery-text{
-                    opacity: 1;
-                    animation: move-down .3s linear;
-                    padding: 1rem;
-                    width: 100%;
-                }
-
-                @keyframes move-down{
-                    0%{
-                        top: 10%;
-                        opacity: .2;
-                    }
-                    50%{
-                        top: 35%;
-                        opacity: .6;
-                    }
-                    100%{
-                        top: 50%;
-                        opacity: 1;
-                    }
-                }
-            
             }
-        }
-
-        // grid item width classes
-        .w-1{
-            grid-column: span 1;
-        }
-        .w-2{
-            grid-column: span 2;
-        }
-        .w-3{
-            grid-column: span 3;
-        }
-        .w-4{
-            grid-column: span 4;
-        }
-        .w-5{
-            grid-column: span 5;
-        }
-        .w-6{
-            grid-column: span 6;
-        }
-
-        // grid item height classes
-        .h-1{
-            grid-row: span 2;
-        }
-        .h-2{
-            grid-row: span 2;
-        }
-        .h-3{
-            grid-row: span 2;
-        }
-        .h-4{
-            grid-row: span 2;
-        }
-        .h-5{
-            grid-row: span 2;
-        }
-        .h-6{
-            grid-row: span 2;
-        }
-        .h-2{
-            grid-row: span 2;
-        }
-
     
-        @include breakpoint-down(medium){
-            .w-1,
-            .w-2,
-            .w-3,
-            .w-4,
-            .w-5,
-            .w-6{
+            // grid item width classes
+            .w-1{
                 grid-column: span 1;
             }
+            .w-2{
+                grid-column: span 2;
+            }
+            .w-3{
+                grid-column: span 3;
+            }
+            .w-4{
+                grid-column: span 4;
+            }
+            .w-5{
+                grid-column: span 5;
+            }
+            .w-6{
+                grid-column: span 6;
+            }
+    
+            // grid item height classes
+            .h-1{
+                grid-row: span 2;
+            }
+            .h-2{
+                grid-row: span 2;
+            }
+            .h-3{
+                grid-row: span 2;
+            }
+            .h-4{
+                grid-row: span 2;
+            }
+            .h-5{
+                grid-row: span 2;
+            }
+            .h-6{
+                grid-row: span 2;
+            }
+            .h-2{
+                grid-row: span 2;
+            }
+    
+        
+            @include breakpoint-down(medium){
+                .w-1,
+                .w-2,
+                .w-3,
+                .w-4,
+                .w-5,
+                .w-6{
+                    grid-column: span 1;
+                }
+            }
+    
         }
-
     }
 }
